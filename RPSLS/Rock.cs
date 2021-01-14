@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Program
+    class Rock
     {
-        static void Main(string[] args)
-        {
-
-
-        }
     }
 }

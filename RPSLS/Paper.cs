@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Program
+    class Paper
     {
-        static void Main(string[] args)
-        {
-
-
-        }
     }
 }
