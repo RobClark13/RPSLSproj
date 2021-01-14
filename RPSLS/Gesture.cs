@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Gesture
+    public abstract class Gesture
     {
+        //member variables
+
+        //constructor
+
+        //member methods
+        public abstract void CompareGesture();
     }
 }

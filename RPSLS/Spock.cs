@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Spock
-    {
+    public class Spock : Gesture
+    { //member variables
+
+        //constructor
+
+        //member methods
+        public override void CompareGesture()
+        {
+            
+        }
+
     }
 }
