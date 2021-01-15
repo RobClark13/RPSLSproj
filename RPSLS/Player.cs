@@ -12,9 +12,15 @@ namespace RPSLS
         public string name;
 
         //constructor
+        public Player()
+        {
+            name = "";
+        }
 
         //member methods
         public abstract void ChooseGesture();
+        public abstract void SetName();
+       
         
 
     }

@@ -17,6 +17,10 @@ namespace RPSLS
         {
 
         }
+        public override void SetName()
+        {
+            name = "Computer";
+        }
 
 
 

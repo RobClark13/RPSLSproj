@@ -12,9 +12,7 @@ namespace RPSLS
         public Player playerOne;
         public Player playerTwo;
         public List<string> gestureList;
-        
-        
-
+             
 
         //constructor
         public Game()
@@ -34,7 +32,8 @@ namespace RPSLS
         }
         public void DisplayRules()
         {
-            Console.WriteLine("In this game \nRock crushes Scissors, " +
+            Console.WriteLine("In this game " +
+                "\nRock crushes Scissors, " +
                 "\nScissors cuts Paper, " +
                 "\nPaper covers Rock, " +
                 "\nRock crushes Lizard, " +
@@ -47,24 +46,31 @@ namespace RPSLS
         }
         public void ChooseTypeOfGame()
         {
-            Console.WriteLine("Would you like to play a single player game against the computer or a  two player game against your friend?");
-            Console.WriteLine("Press 1 for Single Player or 2 for Two Player Game");
-            string userInput = Console.ReadLine();
-            if (userInput == "1")
-            {
-                Console.WriteLine("Single player chosen");
-                Console.ReadLine();
-
-            }
-            else if (userInput == "2")
-            {
-                Console.WriteLine("Two Player Game chosen");
-                Console.ReadLine();
-            }
-            else
+            Console.WriteLine("Would you like to play a single player game against the computer or a two player game against your friend?");
+            
+            while (playerOne == null)
             {
                 Console.WriteLine("Press 1 for Single Player or 2 for Two Player Game");
-                Console.ReadLine();
+                string userInput = Console.ReadLine();
+
+                if (userInput == "1")
+                {
+                    Console.WriteLine("Single player chosen");
+                    playerOne = new Human();
+                    playerTwo = new Computer();
+                    playerOne.SetName();
+                    Console.ReadLine();
+
+                }
+                else if (userInput == "2")
+                {
+                    Console.WriteLine("Two Player Game chosen");
+                    playerOne = new Human();
+                    playerOne.SetName();
+                    playerTwo = new Human();
+                    playerTwo.SetName();
+                    Console.ReadLine();
+                }
             }
         }
         public void CreateGestureList()
@@ -76,6 +82,7 @@ namespace RPSLS
             gestureList.Add("Lizard");
             gestureList.Add("Spock");
         }
+        
         public void CompareGestures()
         {
 
