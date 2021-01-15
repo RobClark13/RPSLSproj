@@ -6,17 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public class Human : Player
+    class Human
     {
-        //member variables
-
-        //constructor
-
-        //member methods
-        public override void ChooseGesture()
-        {
-            
-        }
-
     }
 }
