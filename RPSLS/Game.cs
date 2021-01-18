@@ -11,12 +11,12 @@ namespace RPSLS
         //member variables
         public Player playerOne;
         public Player playerTwo;
-              
-            
+
+
         //constructor
         public Game()
         {
-            
+
         }
 
         //member methods
@@ -30,17 +30,17 @@ namespace RPSLS
             playerTwo.CreateGestureList();
             while (playerOne.score < 2 && playerTwo.score < 2)
             {
-                
+
                 playerOne.ChooseGesture();
                 Console.WriteLine(playerOne.name + " chooses " + playerOne.gestureChoice);
-                
+
                 playerTwo.ChooseGesture();
                 Console.WriteLine(playerTwo.name + " chooses " + playerTwo.gestureChoice);
-                
-                CompareGestures();
-                Console.WriteLine(playerOne.name +" has " + playerOne.score);
-                Console.WriteLine(playerTwo.name +" has " + playerTwo.score);
-                
+
+                CompareGesturesExpanded();
+                Console.WriteLine(playerOne.name + " has " + playerOne.score);
+                Console.WriteLine(playerTwo.name + " has " + playerTwo.score);
+
 
             }
             DisplayWinner();
@@ -62,7 +62,7 @@ namespace RPSLS
         }
         public void DisplayWinner()
         {
-            if(playerOne.score == 2)
+            if (playerOne.score == 2)
             {
                 Console.WriteLine(playerOne.name + " wins!");
             }
@@ -74,7 +74,7 @@ namespace RPSLS
         public void ChooseTypeOfGame()
         {
             Console.WriteLine("Would you like to play a single player game against the computer or a two player game against your friend?");
-            
+
             while (playerOne == null)
             {
                 Console.WriteLine("Press 1 for Single Player or 2 for Two Player Game");
@@ -87,7 +87,7 @@ namespace RPSLS
                     playerOne.SetName();
                     playerTwo = new Computer();
                     playerTwo.SetName();
-                    
+
 
                 }
                 else if (userInput == "2")
@@ -97,7 +97,7 @@ namespace RPSLS
                     playerOne.SetName();
                     playerTwo = new Human();
                     playerTwo.SetName();
-                    
+
                 }
             }
         }
@@ -132,6 +132,158 @@ namespace RPSLS
             {
                 playerTwo.AddPoint();
             }
-        }            
+        }
+        public void CompareGesturesExpanded()
+        {
+            if (playerOne.gestureChoice == playerTwo.gestureChoice)
+            {
+                Console.WriteLine("Round is a tie");
+            }
+            //either chooses rock
+            else if (playerOne.gestureChoice == playerOne.gestureList[0] || playerTwo.gestureChoice == playerTwo.gestureList[0])
+            {
+                //Either chooses paper
+                if (playerOne.gestureChoice == playerOne.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[1])
+                {
+                    Console.WriteLine("Paper covers Rock");
+                    if (playerOne.gestureChoice == playerOne.gestureList[1])
+                    {
+                        playerOne.AddPoint();
+                    }
+                    else
+                    {
+                        playerTwo.AddPoint();
+                    }
+                }
+                //Either choose Scissors
+                else if (playerOne.gestureChoice == playerOne.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[2])
+                {
+                    Console.WriteLine("Rock crushes Scissors");
+                    if (playerOne.gestureChoice == playerOne.gestureList[2])
+                    {
+                        playerTwo.AddPoint();
+                    }
+                    else
+                    {
+                        playerOne.AddPoint();
+                    }
+                }
+                //Either chooses Lizard
+                else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
+                {
+                    Console.WriteLine("Rock crushes Lizard");
+                    if (playerOne.gestureChoice == playerOne.gestureList[3])
+                    {
+                        playerTwo.AddPoint();
+                    }
+                    else
+                    {
+                        playerOne.AddPoint();
+                    }
+                }
+                //Either chooses Spock
+                else 
+                {
+                    Console.WriteLine("Spock vaporizes Rock");
+                    if (playerOne.gestureChoice == playerOne.gestureList[4])
+                    {
+                        playerOne.AddPoint();
+                    }
+                    else
+                    {
+                        playerTwo.AddPoint();
+                    }
+                }
+
+            }
+            //Either chooses Paper
+            else if (playerOne.gestureChoice == playerOne.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[1])
+            {
+                //Either chooses Scissors
+                if (playerOne.gestureChoice == playerOne.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[2])
+                {
+                    Console.WriteLine("Scissors cuts Paper");
+                    if (playerOne.gestureChoice == playerOne.gestureList[2])
+                    {
+                        playerOne.AddPoint();
+                    }
+                    else
+                    {
+                        playerTwo.AddPoint();
+                    }
+                }
+                //Either chooses Lizard
+                else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
+                {
+                    Console.WriteLine("Lizard eats Paper");
+                    if (playerOne.gestureChoice == playerOne.gestureList[3])
+                    {
+                        playerOne.AddPoint();
+                    }
+                    else
+                    {
+                        playerTwo.AddPoint();
+                    }
+                }
+                //Either chooses Spock 
+                else 
+                {
+                    Console.WriteLine("Paper disproves Spock");
+                    if (playerOne.gestureChoice == playerOne.gestureList[4])
+                    {
+                        playerOne.AddPoint();
+                    }
+                    else
+                    {
+                        playerTwo.AddPoint();
+                    }
+                }
+            }
+            //Either chooses Scissors
+            else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
+            {
+                //either chooses lizard
+                if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
+                {
+                    Console.WriteLine("Scissors decapitates Lizard");
+                    if (playerOne.gestureChoice == playerOne.gestureList[3])
+                    {
+                        playerTwo.AddPoint();
+                    }
+                    else
+                    {
+                        playerOne.AddPoint();
+                    }
+                }
+                //either chooses Spock
+                else
+                {
+                    Console.WriteLine("Spock smashes Scissors");
+                    if (playerOne.gestureChoice == playerOne.gestureList[4])
+                    {
+                        playerOne.AddPoint();
+                    }
+                    else
+                    {
+                        playerTwo.AddPoint();
+                    }
+                }
+
+
+            }
+            else
+            {
+                Console.WriteLine("Lizard poisons Spock");
+                if(playerOne.gestureChoice == playerOne.gestureList[4])
+                {
+                    playerTwo.AddPoint();
+                }
+                else
+                {
+                    playerOne.AddPoint();
+                }
+            }
+        }
     }
 }
+
