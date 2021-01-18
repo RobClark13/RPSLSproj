@@ -30,7 +30,6 @@ namespace RPSLS
             playerTwo.CreateGestureList();
             while (playerOne.score < 2 && playerTwo.score < 2)
             {
-
                 playerOne.ChooseGesture();
                 Console.WriteLine(playerOne.name + " chooses " + playerOne.gestureChoice);
 
@@ -40,8 +39,6 @@ namespace RPSLS
                 CompareGesturesExpanded();
                 Console.WriteLine(playerOne.name + " has " + playerOne.score);
                 Console.WriteLine(playerTwo.name + " has " + playerTwo.score);
-
-
             }
             DisplayWinner();
             Console.ReadLine();
@@ -58,7 +55,8 @@ namespace RPSLS
                 "\nScissors decapitates Lizard, " +
                 "\nLizard eats Paper, " +
                 "\nPaper disproves Spock, " +
-                "\nand Spock vaporizes Rock!");
+                "\nand Spock vaporizes Rock!"+
+                "\nBest of Three");
         }
         public void DisplayWinner()
         {
@@ -87,8 +85,6 @@ namespace RPSLS
                     playerOne.SetName();
                     playerTwo = new Computer();
                     playerTwo.SetName();
-
-
                 }
                 else if (userInput == "2")
                 {
@@ -97,11 +93,11 @@ namespace RPSLS
                     playerOne.SetName();
                     playerTwo = new Human();
                     playerTwo.SetName();
-
                 }
             }
         }
 
+        //Initial Compare Gestures Method
         public void CompareGestures()
         {
             if (playerOne.gestureChoice == playerTwo.gestureChoice)
@@ -145,7 +141,11 @@ namespace RPSLS
                 //Either chooses paper
                 if (playerOne.gestureChoice == playerOne.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[1])
                 {
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("Paper covers Rock");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[1])
                     {
                         playerOne.AddPoint();
@@ -158,7 +158,9 @@ namespace RPSLS
                 //Either choose Scissors
                 else if (playerOne.gestureChoice == playerOne.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[2])
                 {
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
                     Console.WriteLine("Rock crushes Scissors");
+                    Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[2])
                     {
                         playerTwo.AddPoint();
@@ -171,7 +173,9 @@ namespace RPSLS
                 //Either chooses Lizard
                 else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
                 {
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
                     Console.WriteLine("Rock crushes Lizard");
+                    Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[3])
                     {
                         playerTwo.AddPoint();
@@ -184,7 +188,9 @@ namespace RPSLS
                 //Either chooses Spock
                 else 
                 {
+                    Console.BackgroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine("Spock vaporizes Rock");
+                    Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[4])
                     {
                         playerOne.AddPoint();
@@ -194,7 +200,6 @@ namespace RPSLS
                         playerTwo.AddPoint();
                     }
                 }
-
             }
             //Either chooses Paper
             else if (playerOne.gestureChoice == playerOne.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[1])
@@ -202,7 +207,11 @@ namespace RPSLS
                 //Either chooses Scissors
                 if (playerOne.gestureChoice == playerOne.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[2])
                 {
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("Scissors cuts Paper");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[2])
                     {
                         playerOne.AddPoint();
@@ -215,7 +224,9 @@ namespace RPSLS
                 //Either chooses Lizard
                 else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
                 {
+                    Console.BackgroundColor = ConsoleColor.Green;
                     Console.WriteLine("Lizard eats Paper");
+                    Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[3])
                     {
                         playerOne.AddPoint();
@@ -228,7 +239,11 @@ namespace RPSLS
                 //Either chooses Spock 
                 else 
                 {
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("Paper disproves Spock");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[4])
                     {
                         playerOne.AddPoint();
@@ -240,12 +255,16 @@ namespace RPSLS
                 }
             }
             //Either chooses Scissors
-            else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
+            else if (playerOne.gestureChoice == playerOne.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[2])
             {
                 //either chooses lizard
                 if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
                 {
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("Scissors decapitates Lizard");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[3])
                     {
                         playerTwo.AddPoint();
@@ -258,7 +277,9 @@ namespace RPSLS
                 //either chooses Spock
                 else
                 {
+                    Console.BackgroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine("Spock smashes Scissors");
+                    Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[4])
                     {
                         playerOne.AddPoint();
@@ -268,13 +289,13 @@ namespace RPSLS
                         playerTwo.AddPoint();
                     }
                 }
-
-
             }
             else
             {
+                Console.BackgroundColor = ConsoleColor.Green;
                 Console.WriteLine("Lizard poisons Spock");
-                if(playerOne.gestureChoice == playerOne.gestureList[4])
+                Console.BackgroundColor = ConsoleColor.Black;
+                if (playerOne.gestureChoice == playerOne.gestureList[4])
                 {
                     playerTwo.AddPoint();
                 }

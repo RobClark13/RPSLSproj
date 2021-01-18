@@ -27,8 +27,6 @@ namespace RPSLS
         {
             PrintGestureList();
             string userGestureChoice = Console.ReadLine();
-            
-           
             switch(userGestureChoice)
             {
                 case "0":
@@ -37,7 +35,6 @@ namespace RPSLS
                  case "1":
                     gestureChoice = gestureList[1];
                     break;
-                   
                 case "2":
                     gestureChoice = gestureList[2];
                     break;
@@ -47,17 +44,11 @@ namespace RPSLS
                  case "4":
                     gestureChoice = gestureList[4];
                     break;
-                    
-
-                  default:
+                 default:
                     Console.WriteLine("Only enter 0, 1, 2, 3, or 4");
                     ChooseGesture();
-                    break;                       
-                                         
-            }
-                    
-                      
-                       
+                    break;             
+            }         
         }
 
         public override void SetName()
@@ -70,6 +61,5 @@ namespace RPSLS
         {
             score++;
         }
-
     }
 }

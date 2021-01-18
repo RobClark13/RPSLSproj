@@ -37,10 +37,7 @@ namespace RPSLS
                     break;
                 default:
                     break;
-
             }
-
-
         }
         public override void SetName()
         {
@@ -50,9 +47,5 @@ namespace RPSLS
         {
             score++;
         }
-
-
-
-
     }
 }

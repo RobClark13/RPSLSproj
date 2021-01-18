@@ -32,7 +32,6 @@ namespace RPSLS
             gestureList.Add("Scissors");
             gestureList.Add("Lizard");
             gestureList.Add("Spock");
-            
         }
 
         public void PrintGestureList()
@@ -46,8 +45,5 @@ namespace RPSLS
         public abstract void ChooseGesture();
         public abstract void SetName();
         public abstract void AddPoint();
-       
-        
-
     }
 }
