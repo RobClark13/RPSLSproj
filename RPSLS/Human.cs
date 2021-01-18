@@ -26,10 +26,10 @@ namespace RPSLS
         public override void ChooseGesture()
         {
             PrintGestureList();
-            string gestureChoice2 = Console.ReadLine();
+            string userGestureChoice = Console.ReadLine();
             
            
-            switch(gestureChoice2)
+            switch(userGestureChoice)
             {
                 case "0":
                     gestureChoice = gestureList[0];
@@ -55,23 +55,21 @@ namespace RPSLS
                     break;                       
                                          
             }
-            
-            
-
-            
-
-
-            
-
+                    
+                      
+                       
         }
 
         public override void SetName()
         {
             Console.WriteLine("What is your name?");
             string userName = Console.ReadLine();
-            name = userName;
-
-            
+            name = userName;            
         }
+        public override void AddPoint()
+        {
+            score++;
+        }
+
     }
 }

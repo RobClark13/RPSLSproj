@@ -11,16 +11,14 @@ namespace RPSLS
         //member variables
         public Player playerOne;
         public Player playerTwo;
-        public List<string> gestureList;
-        int playerOneScore;
-        int playerTwoScore;
+        
+        
              
 
         //constructor
         public Game()
         {
-            playerOneScore = 0;
-            playerTwoScore = 0;
+            
         }
 
         //member methods
@@ -32,16 +30,23 @@ namespace RPSLS
             DisplayRules();
             ChooseTypeOfGame();
             playerOne.CreateGestureList();
-            while (playerOneScore < 2 && playerTwoScore < 2)
+            playerTwo.CreateGestureList();
+            while (playerOne.score < 2 && playerTwo.score < 2)
             {
                 
                 playerOne.ChooseGesture();
                 Console.WriteLine(playerOne.name + " chooses " + playerOne.gestureChoice);
-                Console.ReadLine();
+                
                 playerTwo.ChooseGesture();
+                Console.WriteLine(playerTwo.name + " chooses " + playerTwo.gestureChoice);
+                
                 CompareGestures();
+                Console.WriteLine(playerOne.name +" has " + playerOne.score);
+                
 
             }
+            DisplayWinner();
+            Console.ReadLine();
         }
         public void DisplayRules()
         {
@@ -57,6 +62,17 @@ namespace RPSLS
                 "\nPaper disproves Spock, " +
                 "\nand Spock vaporizes Rock!");
         }
+        public void DisplayWinner()
+        {
+            if(playerOne.score == 0)
+            {
+                Console.WriteLine(playerOne.name + " wins!");
+            }
+            else
+            {
+                Console.WriteLine(playerTwo.name + " wins!");
+            }
+        }
         public void ChooseTypeOfGame()
         {
             Console.WriteLine("Would you like to play a single player game against the computer or a two player game against your friend?");
@@ -70,8 +86,9 @@ namespace RPSLS
                 {
                     Console.WriteLine("Single player chosen");
                     playerOne = new Human();
-                    playerTwo = new Computer();
                     playerOne.SetName();
+                    playerTwo = new Computer();
+                    playerTwo.SetName();
                     
 
                 }
@@ -86,18 +103,42 @@ namespace RPSLS
                 }
             }
         }
-        
 
-        
-        
+
+
+
         public void CompareGestures()
         {
-
-
-
-
-
-        }
+            if (playerOne.gestureChoice == playerTwo.gestureChoice)
+            {
+                Console.WriteLine("Tie"); ;
+            }
+            else if (playerOne.gestureChoice == playerOne.gestureList[0] && (playerTwo.gestureChoice == playerTwo.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[3]))
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gestureChoice == playerOne.gestureList[1] && (playerTwo.gestureChoice == playerTwo.gestureList[0] || playerTwo.gestureChoice == playerTwo.gestureList[4]))
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gestureChoice == playerOne.gestureList[2] && (playerTwo.gestureChoice == playerTwo.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[3]))
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gestureChoice == playerOne.gestureList[3] && (playerTwo.gestureChoice == playerTwo.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[4]))
+            {
+                playerOne.score++;
+            }
+            else if (playerOne.gestureChoice == playerOne.gestureList[4] && (playerTwo.gestureChoice == playerTwo.gestureList[0] || playerTwo.gestureChoice == playerTwo.gestureList[2]))
+            {
+                playerOne.score++;
+            }
+            else
+            {
+                playerTwo.score++;
+            }
+        }            
+       
 
     }
 }

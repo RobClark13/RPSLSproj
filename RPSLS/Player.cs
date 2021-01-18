@@ -12,13 +12,15 @@ namespace RPSLS
         public string name;
         public string gestureChoice;
         public List<string> gestureList;
+        public int score;
 
 
         //constructor
         public Player()
         {
             name = "";
-            gestureChoice = "test";
+            gestureChoice = "";
+            score = 0;
         }
 
         //member methods
@@ -30,6 +32,7 @@ namespace RPSLS
             gestureList.Add("Scissors");
             gestureList.Add("Lizard");
             gestureList.Add("Spock");
+            
         }
 
         public void PrintGestureList()
@@ -37,12 +40,12 @@ namespace RPSLS
             for (int i = 0; i < gestureList.Count; i++)
             {
                 Console.WriteLine(name + " Press " + i + " for " + gestureList[i]);
-
             }
 
         }
         public abstract void ChooseGesture();
         public abstract void SetName();
+        public abstract void AddPoint();
        
         
 
