@@ -11,10 +11,8 @@ namespace RPSLS
         //member variables
         public Player playerOne;
         public Player playerTwo;
-        
-        
-             
-
+              
+            
         //constructor
         public Game()
         {
@@ -25,7 +23,6 @@ namespace RPSLS
 
         public void RunGame()
         {
-            
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock");
             DisplayRules();
             ChooseTypeOfGame();
@@ -42,6 +39,7 @@ namespace RPSLS
                 
                 CompareGestures();
                 Console.WriteLine(playerOne.name +" has " + playerOne.score);
+                Console.WriteLine(playerTwo.name +" has " + playerTwo.score);
                 
 
             }
@@ -64,7 +62,7 @@ namespace RPSLS
         }
         public void DisplayWinner()
         {
-            if(playerOne.score == 0)
+            if(playerOne.score == 2)
             {
                 Console.WriteLine(playerOne.name + " wins!");
             }
@@ -104,9 +102,6 @@ namespace RPSLS
             }
         }
 
-
-
-
         public void CompareGestures()
         {
             if (playerOne.gestureChoice == playerTwo.gestureChoice)
@@ -115,30 +110,28 @@ namespace RPSLS
             }
             else if (playerOne.gestureChoice == playerOne.gestureList[0] && (playerTwo.gestureChoice == playerTwo.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[3]))
             {
-                playerOne.score++;
+                playerOne.AddPoint();
             }
             else if (playerOne.gestureChoice == playerOne.gestureList[1] && (playerTwo.gestureChoice == playerTwo.gestureList[0] || playerTwo.gestureChoice == playerTwo.gestureList[4]))
             {
-                playerOne.score++;
+                playerOne.AddPoint();
             }
             else if (playerOne.gestureChoice == playerOne.gestureList[2] && (playerTwo.gestureChoice == playerTwo.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[3]))
             {
-                playerOne.score++;
+                playerOne.AddPoint();
             }
             else if (playerOne.gestureChoice == playerOne.gestureList[3] && (playerTwo.gestureChoice == playerTwo.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[4]))
             {
-                playerOne.score++;
+                playerOne.AddPoint();
             }
             else if (playerOne.gestureChoice == playerOne.gestureList[4] && (playerTwo.gestureChoice == playerTwo.gestureList[0] || playerTwo.gestureChoice == playerTwo.gestureList[2]))
             {
-                playerOne.score++;
+                playerOne.AddPoint();
             }
             else
             {
-                playerTwo.score++;
+                playerTwo.AddPoint();
             }
         }            
-       
-
     }
 }

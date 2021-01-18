@@ -35,10 +35,7 @@ namespace RPSLS
                 case 4:
                     gestureChoice = gestureList[4];
                     break;
-
-
                 default:
-                    
                     break;
 
             }
