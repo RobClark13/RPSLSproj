@@ -12,23 +12,36 @@ namespace RPSLS
         public Player playerOne;
         public Player playerTwo;
         public List<string> gestureList;
+        int playerOneScore;
+        int playerTwoScore;
              
 
         //constructor
         public Game()
         {
-           
+            playerOneScore = 0;
+            playerTwoScore = 0;
         }
 
         //member methods
 
         public void RunGame()
         {
-            CreateGestureList();
+            
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock");
             DisplayRules();
             ChooseTypeOfGame();
-            
+            playerOne.CreateGestureList();
+            while (playerOneScore < 2 && playerTwoScore < 2)
+            {
+                
+                playerOne.ChooseGesture();
+                Console.WriteLine(playerOne.name + " chooses " + playerOne.gestureChoice);
+                Console.ReadLine();
+                playerTwo.ChooseGesture();
+                CompareGestures();
+
+            }
         }
         public void DisplayRules()
         {
@@ -59,7 +72,7 @@ namespace RPSLS
                     playerOne = new Human();
                     playerTwo = new Computer();
                     playerOne.SetName();
-                    Console.ReadLine();
+                    
 
                 }
                 else if (userInput == "2")
@@ -69,22 +82,20 @@ namespace RPSLS
                     playerOne.SetName();
                     playerTwo = new Human();
                     playerTwo.SetName();
-                    Console.ReadLine();
+                    
                 }
             }
         }
-        public void CreateGestureList()
-        {
-            gestureList = new List<string>();
-            gestureList.Add("Rock");
-            gestureList.Add("Paper");
-            gestureList.Add("Scissors");
-            gestureList.Add("Lizard");
-            gestureList.Add("Spock");
-        }
+        
+
+        
         
         public void CompareGestures()
         {
+
+
+
+
 
         }
 

@@ -9,13 +9,15 @@ namespace RPSLS
     class Computer : Player
     {
         //member variables
-
+        Random computerChoiceNumber;
         //constructor
 
         //member methods
         public override void ChooseGesture()
         {
-
+            string gestureChoice = Console.ReadLine();
+           
+            
         }
         public override void SetName()
         {

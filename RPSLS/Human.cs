@@ -9,20 +9,59 @@ namespace RPSLS
     public class Human : Player
     {
         //member variables
+        
 
         //constructor
 
         public Human()
         {
-            name = "";
+            
+            
         }
 
         //member methods
-        
-        
-        
+
+
+
         public override void ChooseGesture()
         {
+            PrintGestureList();
+            string gestureChoice2 = Console.ReadLine();
+            
+           
+            switch(gestureChoice2)
+            {
+                case "0":
+                    gestureChoice = gestureList[0];
+                    break;
+                 case "1":
+                    gestureChoice = gestureList[1];
+                    break;
+                   
+                case "2":
+                    gestureChoice = gestureList[2];
+                    break;
+                 case "3":
+                    gestureChoice = gestureList[3];
+                    break;
+                 case "4":
+                    gestureChoice = gestureList[4];
+                    break;
+                    
+
+                  default:
+                    Console.WriteLine("Only enter 0, 1, 2, 3, or 4");
+                    ChooseGesture();
+                    break;                       
+                                         
+            }
+            
+            
+
+            
+
+
+            
 
         }
 
@@ -30,7 +69,7 @@ namespace RPSLS
         {
             Console.WriteLine("What is your name?");
             string userName = Console.ReadLine();
-            userName = name;
+            name = userName;
 
             
         }
