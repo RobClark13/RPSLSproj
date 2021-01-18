@@ -143,7 +143,7 @@ namespace RPSLS
                 {
                     Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine("Paper covers Rock");
+                    Console.WriteLine("[] Paper covers Rock");
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[1])
@@ -159,7 +159,7 @@ namespace RPSLS
                 else if (playerOne.gestureChoice == playerOne.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[2])
                 {
                     Console.BackgroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine("Rock crushes Scissors");
+                    Console.WriteLine("O Rock crushes Scissors");
                     Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[2])
                     {
@@ -174,7 +174,7 @@ namespace RPSLS
                 else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
                 {
                     Console.BackgroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine("Rock crushes Lizard");
+                    Console.WriteLine("O Rock crushes Lizard");
                     Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[3])
                     {
@@ -189,7 +189,7 @@ namespace RPSLS
                 else 
                 {
                     Console.BackgroundColor = ConsoleColor.DarkBlue;
-                    Console.WriteLine("Spock vaporizes Rock");
+                    Console.WriteLine(">:-I Spock vaporizes Rock");
                     Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[4])
                     {
@@ -209,7 +209,7 @@ namespace RPSLS
                 {
                     Console.BackgroundColor = ConsoleColor.Gray;
                     Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine("Scissors cuts Paper");
+                    Console.WriteLine("8< Scissors cuts Paper");
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[2])
@@ -225,7 +225,7 @@ namespace RPSLS
                 else if (playerOne.gestureChoice == playerOne.gestureList[3] || playerTwo.gestureChoice == playerTwo.gestureList[3])
                 {
                     Console.BackgroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Lizard eats Paper");
+                    Console.WriteLine("~~I==I> Lizard eats Paper");
                     Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[3])
                     {
@@ -241,7 +241,7 @@ namespace RPSLS
                 {
                     Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine("Paper disproves Spock");
+                    Console.WriteLine("[] Paper disproves Spock");
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[4])
@@ -262,7 +262,7 @@ namespace RPSLS
                 {
                     Console.BackgroundColor = ConsoleColor.Gray;
                     Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine("Scissors decapitates Lizard");
+                    Console.WriteLine("8< Scissors decapitates Lizard");
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
                     if (playerOne.gestureChoice == playerOne.gestureList[3])
@@ -278,7 +278,7 @@ namespace RPSLS
                 else
                 {
                     Console.BackgroundColor = ConsoleColor.DarkBlue;
-                    Console.WriteLine("Spock smashes Scissors");
+                    Console.WriteLine(">:-I Spock smashes Scissors");
                     Console.BackgroundColor = ConsoleColor.Black;
                     if (playerOne.gestureChoice == playerOne.gestureList[4])
                     {
@@ -293,7 +293,7 @@ namespace RPSLS
             else
             {
                 Console.BackgroundColor = ConsoleColor.Green;
-                Console.WriteLine("Lizard poisons Spock");
+                Console.WriteLine("~~I==I> Lizard poisons Spock");
                 Console.BackgroundColor = ConsoleColor.Black;
                 if (playerOne.gestureChoice == playerOne.gestureList[4])
                 {

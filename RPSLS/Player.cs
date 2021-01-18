@@ -40,7 +40,6 @@ namespace RPSLS
             {
                 Console.WriteLine(name + " Press " + i + " for " + gestureList[i]);
             }
-
         }
         public abstract void ChooseGesture();
         public abstract void SetName();
