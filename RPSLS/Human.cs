@@ -20,9 +20,6 @@ namespace RPSLS
         }
 
         //member methods
-
-
-
         public override void ChooseGesture()
         {
             PrintGestureList();
@@ -50,7 +47,6 @@ namespace RPSLS
                     break;             
             }         
         }
-
         public override void SetName()
         {
             Console.WriteLine("What is your name?");

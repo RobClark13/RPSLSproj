@@ -12,7 +12,6 @@ namespace RPSLS
         public Player playerOne;
         public Player playerTwo;
 
-
         //constructor
         public Game()
         {
@@ -95,40 +94,7 @@ namespace RPSLS
                     playerTwo.SetName();
                 }
             }
-        }
-
-        //Initial Compare Gestures Method
-        public void CompareGestures()
-        {
-            if (playerOne.gestureChoice == playerTwo.gestureChoice)
-            {
-                Console.WriteLine("Tie"); ;
-            }
-            else if (playerOne.gestureChoice == playerOne.gestureList[0] && (playerTwo.gestureChoice == playerTwo.gestureList[2] || playerTwo.gestureChoice == playerTwo.gestureList[3]))
-            {
-                playerOne.AddPoint();
-            }
-            else if (playerOne.gestureChoice == playerOne.gestureList[1] && (playerTwo.gestureChoice == playerTwo.gestureList[0] || playerTwo.gestureChoice == playerTwo.gestureList[4]))
-            {
-                playerOne.AddPoint();
-            }
-            else if (playerOne.gestureChoice == playerOne.gestureList[2] && (playerTwo.gestureChoice == playerTwo.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[3]))
-            {
-                playerOne.AddPoint();
-            }
-            else if (playerOne.gestureChoice == playerOne.gestureList[3] && (playerTwo.gestureChoice == playerTwo.gestureList[1] || playerTwo.gestureChoice == playerTwo.gestureList[4]))
-            {
-                playerOne.AddPoint();
-            }
-            else if (playerOne.gestureChoice == playerOne.gestureList[4] && (playerTwo.gestureChoice == playerTwo.gestureList[0] || playerTwo.gestureChoice == playerTwo.gestureList[2]))
-            {
-                playerOne.AddPoint();
-            }
-            else
-            {
-                playerTwo.AddPoint();
-            }
-        }
+        }        
         public void CompareGesturesExpanded()
         {
             if (playerOne.gestureChoice == playerTwo.gestureChoice)

@@ -9,14 +9,14 @@ namespace RPSLS
     class Computer : Player
     {
         //member variables
-        Random computerGestureNumber2;
+        Random computerGestureRandomNumber;
         //constructor
 
         //member methods
         public override void ChooseGesture()
         {
-            computerGestureNumber2 = new Random();
-            int computerGestureNumber = computerGestureNumber2.Next(0, 4);
+            computerGestureRandomNumber = new Random();
+            int computerGestureNumber = computerGestureRandomNumber.Next(0, 4);
             switch (computerGestureNumber)
             {
                 case 0:
